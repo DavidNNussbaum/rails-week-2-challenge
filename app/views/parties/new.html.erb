@@ -1,0 +1,30 @@
+<h3>Party Form</h3>
+
+<%= form_for(@party) do |f| %>
+  <label>Party Name:</label><br>
+  <%= f.text_field :name %><br>
+
+  <label>Party Category:</label><br>
+  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+  <%= f.fields_for :categories, post.categories.build do |categories_fields| %>
+    <%= categories_fields.text_field :name %>
+
+  <label>Party Date:</label><br>
+  <%= f.datetime_select :date, :ampm => true, :minute_step => 15 %>
+
+  <label>Party Budget:</label><br>
+  <%= f.number_field :budget %><br>
+
+  <label>Party Status:</label><br>
+  <%= f.text_field :private %><br>
+  <%= f.select :private, options_for_select([ "true", "false"]), include_blank: "Select Visibility"%><br>
+
+  <label>Party Supplies:</label><br>
+  <%= f.collection_check_boxes :supply_ids, Supply.all, :id, :name %>
+  <%= f.fields_for :supplies, post.supplies.build do |supplies_fields| %>
+    <%= supplies_fields.text_field :name %>
+
+  
+  <%= f.submit %>
+<% end %>
+</form>

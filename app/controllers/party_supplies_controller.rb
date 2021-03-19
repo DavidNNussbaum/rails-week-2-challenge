@@ -1,0 +1,2 @@
+class PartySuppliesController < ApplicationController
+end

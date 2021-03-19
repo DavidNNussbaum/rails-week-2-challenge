@@ -1,0 +1,2 @@
+module PartySuppliesHelper
+end
