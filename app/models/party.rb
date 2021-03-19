@@ -1,4 +1,6 @@
 class Party < ApplicationRecord
     belongs_to :category
-    has_many :supplies, through: :parties_supplies
+    # has_many :parties_supplies
+    # has_many :supplies, through: :parties_supplies
+    has_and_belongs_to_many :supplies
 end

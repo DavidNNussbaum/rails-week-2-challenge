@@ -1,4 +1,4 @@
 class PartySupply < ApplicationRecord
-    has_many :parties
-    has_many :supplies
+    # belongs_to :parties
+    # belongs_to :supplies
 end

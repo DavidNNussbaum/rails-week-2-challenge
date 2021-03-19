@@ -11,7 +11,7 @@ class PartiesController < ApplicationController
   
     def new
       @party = Party.new
-      redirect_to :new
+   
     end
   
     def edit

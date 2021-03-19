@@ -5,12 +5,13 @@
   <%= f.text_field :name %><br>
 
   <label>Party Category:</label><br>
-  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
-  <%= f.fields_for :categories, post.categories.build do |categories_fields| %>
+  <%= f.collection_check_boxes :category_id, Category.all, :id, :name %>
+  <%= f.fields_for :category, @party.build_category do |categories_fields| %>
     <%= categories_fields.text_field :name %>
+  <% end %>
 
   <label>Party Date:</label><br>
-  <%= f.datetime_select :date, :ampm => true, :minute_step => 15 %>
+  <%= f.datetime_select :date_time, :ampm => true, :minute_step => 15 %>
 
   <label>Party Budget:</label><br>
   <%= f.number_field :budget %><br>
@@ -21,9 +22,9 @@
 
   <label>Party Supplies:</label><br>
   <%= f.collection_check_boxes :supply_ids, Supply.all, :id, :name %>
-  <%= f.fields_for :supplies, post.supplies.build do |supplies_fields| %>
+  <%= f.fields_for :supplies, @party.supplies.build do |supplies_fields| %>
     <%= supplies_fields.text_field :name %>
-
+<% end %>
   
   <%= f.submit %>
 <% end %>

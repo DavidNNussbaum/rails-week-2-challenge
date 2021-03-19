@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :party_supplies
   resources :supplies
   resources :categories
   resources :parties

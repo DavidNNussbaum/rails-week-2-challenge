@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-    has_many :supplies, through: :parties_supplies
+    has_many :parties
 end

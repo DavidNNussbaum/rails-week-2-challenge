@@ -6,6 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Party.create(name: Steve's, date_time: DateTime.strptime('06/30/2012 00:00', '%m/%d/%Y %H:%M'), budget: 135.42, private: true)
-Party.create(name: Mike's, date_time: DateTime.strptime('08/15/2016 00:00', '%m/%d/%Y %H:%M'), budget: 9265.13, private: true)
-Party.create(name: Allan's, date_time: DateTime.strptime('10/30/2020 00:00', '%m/%d/%Y %H:%M'), budget: 873.19, private: true)
+Party.create(name: "Steve's", date_time: '06/30/2012', budget: 135.42, private: true)
+Party.create(name: "Mike's", date_time: '08/15/2016 00:00', budget: 9265.13, private: true)
+Party.create(name: "Allan's", date_time:'10/30/2020 00:00', budget: 873.19, private: true)
