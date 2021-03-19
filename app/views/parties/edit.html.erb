@@ -1,21 +1,11 @@
-h3>Party Edit Form</h3>
+<h3>Party Edit Form</h3>
 
-<%= form_for(@school_classes) do |f| %>
-  <label>Party Name:</label><br>
-  <%= f.text_field :name %><br>
+  <%= render partial: "errors", locals: {object: @party}%>
 
-  <label>Party Date</label><br>
-  <%= f.text_field :date %><br>
 
-  <label>Party Budget</label><br>
-  <%= f.text_field :budget %><br>
+<%= form_for(@party) do |f| %>
+  <%= render partial: "form", locals: {f: f}%>
 
-  <label>Party Status</label><br>
-  <%= f.text_field :private %><br>
-  <%= f.select :private, options_for_select([ "true", "false"], selected: @party.private), include_blank: "Select Visibility"%><br>
 
   <%= f.submit %>
-<% end %> 
-
-
-
+<% end %>

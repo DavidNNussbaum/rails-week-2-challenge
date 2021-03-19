@@ -1,0 +1,14 @@
+
+  <label>Party Name:</label><br>
+  <%= f.text_field :name %><br>
+
+  <label>Party Date</label><br>
+  <%= f.text_field :date_time %><br>
+
+  <label>Party Budget</label><br>
+  <%= f.text_field :budget %><br>
+
+  <label>Party Status</label><br>
+  <%= f.text_field :private %><br>
+  <%= f.select :private, options_for_select([ "true", "false"], selected: @party.private), include_blank: "Select Visibility"%><br>
+

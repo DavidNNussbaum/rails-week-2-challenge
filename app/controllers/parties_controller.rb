@@ -15,7 +15,6 @@ class PartiesController < ApplicationController
     end
   
     def edit
-       
  
     end
   
@@ -30,19 +29,27 @@ class PartiesController < ApplicationController
   
     def update
        
-      @party.update(party_params)
-      redirect_to school_class_path(@party)
+      if @party.update(party_params)
+        redirect_to party_path(@party)
+      else 
+        render :edit
+      end
+      
     end
 
 
   def destroy
         if @party.destroy
-            redirect_to school_class_path
+            redirect_to party_path
         else
             redirect_to back
         end
   end
 private
+
+  def find_party
+    @party = Party.find(params[:id])
+  end
   
     def party_params
       params.require(:party).permit!
