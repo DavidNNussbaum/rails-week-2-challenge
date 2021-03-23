@@ -19,6 +19,8 @@ class PartiesController < ApplicationController
     end
   
     def create
+      
+      # category = Category.find_or_create_by(name:)
       @party = Party.new(party_params)
       if @party.save
             redirect_to @party 

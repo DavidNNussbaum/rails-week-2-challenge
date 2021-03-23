@@ -3,21 +3,9 @@
   <%= render partial: "errors", locals: {object: @party}%>
 
 
-<%= form_for(@party) do |f| %>
 
-  <%= render partial: "form", locals: {f: f}%>
 
-  <label>Party Category:</label><br>
-    <%= f.collection_check_boxes :category_id, Category.all, :id, :name %>
-    <%= f.fields_for :category, @party.build_category do |categories_fields| %>
-    <%= categories_fields.text_field :name %>
-  <% end %>
-  <label>Party Supplies:</label><br>
-    <%= f.collection_check_boxes :supply_ids, Supply.all, :id, :name %>
-    <%= f.fields_for :supplies, @party.supplies.build do |supplies_fields| %>
-    <%= supplies_fields.text_field :name %>
-  <% end %>
+  <%= render partial: "form" %>
+
   
-  <%= f.submit %>
-<% end %>
-</form>
+

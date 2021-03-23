@@ -3,9 +3,7 @@
   <%= render partial: "errors", locals: {object: @party}%>
 
 
-<%= form_for(@party) do |f| %>
-  <%= render partial: "form", locals: {f: f}%>
+
+  <%= render partial: "form" %>
 
 
-  <%= f.submit %>
-<% end %>
