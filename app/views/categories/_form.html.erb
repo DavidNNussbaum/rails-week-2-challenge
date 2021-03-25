@@ -1,0 +1,30 @@
+<%= form_for @category do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <h2>Party:</h2>
+    <%= f.collection_select :party_ids, Party.all, :id, :name, prompt: true %>
+    <br>
+    <%= f.fields_for :parties, @category.parties.build do |p| %>
+
+        <label>Party Name:</label><br>
+        <%= p.text_field :name %><br>
+
+        <label>Party Date</label><br>
+        <%= p.date_field :date_time %><br>
+
+        <label>Party Budget</label><br>
+        <%= p.text_field :budget %><br>
+
+        <label>Party Status</label><br>
+            
+        <%= p.select :private, options_for_select([ "true", "false"]), include_blank: "Select Visibility"%>
+        <br>
+
+        
+
+    <% end %>
+    <br>
+    <%= f.submit %>
+<% end %>
