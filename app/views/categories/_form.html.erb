@@ -6,7 +6,7 @@
     <h2>Party:</h2>
     <%= f.collection_select :party_ids, Party.all, :id, :name, prompt: true %>
     <br>
-    <%= f.fields_for :parties, @category.parties.build do |p| %>
+    <%= f.fields_for :parties do |p| %>
 
         <label>Party Name:</label><br>
         <%= p.text_field :name %><br>
